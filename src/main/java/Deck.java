@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Collections;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
@@ -56,6 +57,20 @@ class Deck {
       .map(Card::name)
       .collect(Collectors.joining(", "));
     return "[" + commaSeparatedCards + "]";
+  }
+
+  public static HashMap<String, Integer> cardMap(ArrayList<Card> hand) {
+    HashMap<String, Integer> cardMap = new HashMap<String, Integer>();
+    for (Card card : hand) {
+      String key = card.getValue();
+
+      if (!(cardMap.containsKey(key))) {
+        cardMap.put(key, 1);
+      } else {
+        cardMap.put(key, cardMap.get(key)+1);
+      }
+    }
+    return cardMap;
   }
 
 
