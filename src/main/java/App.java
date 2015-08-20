@@ -55,6 +55,20 @@ public class App {
 
         System.out.println();
 
-        System.out.println("Does the computer have 8? " + myGame.compHasCard("8"));
+        System.out.println("Does the computer have 8? " + myGame.hasCard(myGame.compHand, "8"));
+
+        System.out.println();
+
+        myGame.transfer(myGame.compHand, myGame.playHand, "8");
+
+        System.out.println();
+        
+        System.out.println("NEW PLAYER HAND");
+        System.out.println(Deck.displayHand(myGame.playHand));
+
+        System.out.println();
+
+        System.out.println("NEW COMPUTER HAND");
+        System.out.println(Deck.displayHand(myGame.compHand));
     }
 }
