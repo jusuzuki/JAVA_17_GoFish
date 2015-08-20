@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DeckTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-08-20T18:40:37" hostname="epicodus-104.local" time="0.001">
+  <properties/>
+  <testcase name="getSuit_returnsACardsSuit_Spades" classname="DeckTest" time="0.0"/>
+  <testcase name="deck_shufflesCorrectly_false" classname="DeckTest" time="0.001"/>
+  <testcase name="card_initializesCorrectly_true" classname="DeckTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
