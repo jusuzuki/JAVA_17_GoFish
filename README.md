@@ -1,7 +1,7 @@
 # README
 
 ## Author
-Momo Ozawa
+Momo Ozawa and Juliana Suzuki
 
 ## Program Name
 
