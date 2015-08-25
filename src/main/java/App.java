@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.io.Console;
 // import java.util.Random;
 // import java.io.*;
 
@@ -55,14 +56,20 @@ public class App {
 
         System.out.println();
 
-        System.out.println("Does the computer have 8? " + myGame.hasCard(myGame.compHand, "8"));
+        Console myConsole = System.console();
+        System.out.println("What card do you want?");
+        String cardValue = myConsole.readLine();
+        String pleaseWork = cardValue;
+        System.out.println("Does the computer have " + cardValue + "?");
+
+
+        System.out.println();
+        System.out.println(myGame.hasCard(myGame.compHand, cardValue));
+
+        myGame.transfer(myGame.compHand, myGame.playHand, pleaseWork);
 
         System.out.println();
 
-        myGame.transfer(myGame.compHand, myGame.playHand, "8");
-
-        System.out.println();
-        
         System.out.println("NEW PLAYER HAND");
         System.out.println(Deck.displayHand(myGame.playHand));
 
@@ -70,5 +77,23 @@ public class App {
 
         System.out.println("NEW COMPUTER HAND");
         System.out.println(Deck.displayHand(myGame.compHand));
+
+        System.out.println();
+
+        System.out.println("-------------------COMPUTER'S RANDOM TURN---------------------");
+        String computerChoice = myGame.randomValue();
+        System.out.println("Does the player have an "+ computerChoice +"?" + myGame.hasCard(myGame.playHand, computerChoice));
+
+        System.out.println();
+        myGame.transfer(myGame.playHand, myGame.compHand, computerChoice);
+
+        System.out.println("NEW PLAYER HAND");
+        System.out.println(Deck.displayHand(myGame.playHand));
+
+        System.out.println();
+
+        System.out.println("NEW COMPUTER HAND");
+        System.out.println(Deck.displayHand(myGame.compHand));
+
     }
 }

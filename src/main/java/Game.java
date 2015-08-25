@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
+
 // import java.util.Comparator;
 
 public class Game {
@@ -10,12 +12,12 @@ public class Game {
 
   public void initializeGame() {
     myDeck = new Deck();
-    // myDeck.shuffle();
+    myDeck.shuffle();
     playHand = myDeck.deal(7);
     compHand = myDeck.deal(7);
   }
 
-  public static void transfer (ArrayList<Card> giverHand, ArrayList<Card> receiverHand, String cardValue){
+  public void transfer(ArrayList<Card> giverHand, ArrayList<Card> receiverHand, String cardValue){
     ArrayList<Card> toRemove = new ArrayList<Card>();
 
     for (Card card :giverHand) {
@@ -31,4 +33,18 @@ public class Game {
     HashMap<String, Integer> handMap = Deck.cardMap(name);
     return handMap.containsKey(cardValue);
   }
+
+  public String randomValue(){
+    int handSize = compHand.size();
+    Random myRandomGenerator = new Random();
+    int cardNumber = myRandomGenerator.nextInt(handSize);
+    String value = compHand.get(cardNumber).getValue();
+    return value;
+  }
+
+  public void goFish(ArrayList<Card> name){
+
+    name.add(myDeck.dealOne());
+  }
+
 }

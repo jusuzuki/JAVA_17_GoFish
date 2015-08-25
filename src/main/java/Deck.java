@@ -52,6 +52,14 @@ class Deck {
     return hand;
   }
 
+  public static Card dealOne(){
+
+    Card card  = deck.get(0);
+
+  
+    return card;
+  }
+
   public static String displayHand(ArrayList<Card> hand) {
     String commaSeparatedCards = hand.stream()
       .map(Card::name)
